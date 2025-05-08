@@ -1,4 +1,8 @@
 package org.example.veuve_clicquot.exception;
 
-public class GoodCountException {
+import lombok.experimental.StandardException;
+
+@StandardException
+public class GoodCountException extends RuntimeException {
+
 }

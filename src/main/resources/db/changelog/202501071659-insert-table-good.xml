@@ -2,19 +2,12 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
     <changeSet id="202501071600-insert-table-champagne-mark" author="gilmi19">
 
-        <insert tableName="champagne_mark">
-            <column name="name">veuve cliqout</column>
-            <column name="type">brut</column>
-        </insert>
-
-        <insert tableName="champagne_mark">
-            <column name="name">veuve cliqout grand rose</column>
-            <column name="type">rose</column>
-        </insert>
-
-        <insert tableName="champagne_mark">
-            <column name="name">veuve cliqout vintage</column>
-            <column name="type">extra brut</column>
-        </insert>
+        <sql>
+            insert into good (mark_id, count_goods, price)
+            values
+                ((select id from champagne_mark where name = 'veuve cliqout'), 1000, 5000),
+                ((select id from champagne_mark where name = 'veuve cliqout grand rose'), 300, 8000),
+                ((select id from champagne_mark where name = 'veuve cliqout vintage'), 100, 15000);
+        </sql>
     </changeSet>
 </databaseChangeLog>

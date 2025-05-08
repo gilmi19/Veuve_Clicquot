@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/202501071550-create-table-champagne-mark.xml
+  - include:
+      file: db/changelog/202501071600-insert-table-champagne-mark.xml
+  - include:
+      file: db/changelog/202501071649-create-table-good.xml
+  - include:
+      file: db/changelog/202501071659-insert-table-good.xml
+
